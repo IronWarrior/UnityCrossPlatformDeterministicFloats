@@ -44,7 +44,7 @@ Because the basic arithmetic operations *are* deterministic, a workaround for th
 
 ## Running the tests
 
-* Download the `inputs.txt` and `results.txt` files from the releases section of this repository. (If you have a Windows PC with an Intel CPU, you can generate the ground truth with a count of 500 and seed of 0. The resulting file will have CRC64=0B6E1BE570134ABC.)
+* Download [inputs.txt](https://github.com/IronWarrior/UnityCrossPlatformDeterministicFloats/files/10523786/inputs.txt) and [results.txt](https://github.com/IronWarrior/UnityCrossPlatformDeterministicFloats/files/10523787/results.txt). (If you have a Windows PC with an Intel CPU, you can generate the ground truth with a count of 500 and seed of 0. The resulting file will have CRC64=0B6E1BE570134ABC.)
 * Copy these files to the `StreamingAssets` directory.
 * Build to your target platform to run the test on it.
 * Once running, select `Execute Test` and toggle off any tests you do not wish to perform.
