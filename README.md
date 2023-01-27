@@ -8,7 +8,7 @@ Tests normal numbers, denormal numbers, NaN and infinities, along with an amount
 - Multiple operand arithmetic
 - Triginometry functions found in `System.Math`
 
-All tests here are performed using the IL2CPP backend, with the Windows standalone build results being used as the ground truth. Tge results here use a random value count of 500 and a seed of 0. If you test on a setup not yet listed here, please feel free to report your results to be added to the table.
+All tests here are performed using the IL2CPP backend, with the Windows standalone build results being used as the ground truth. The results here use a random value count of 500 and a seed of 0. If you test on a setup not yet listed here, please feel free to report your results to be added to the table.
 
 ### Disclaimer
 
