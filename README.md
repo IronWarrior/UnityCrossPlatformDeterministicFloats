@@ -27,7 +27,7 @@ Because the basic arithmetic operations *are* deterministic, a workaround for th
 
 * Operations involving NaN floats return non-deterministic results. This should not be an issue for applications that require determinism, as either
   * NaNs create serious enough bugs that desyncs no longer matter.
-  * The developer can choose to check for NaNs after each operation and resolve the issue there (this repo simply treats all NaN results as if they were the same bit sequence).
+  * The developer can choose to check for NaNs after each operation and resolve the issue there (this repo has an option to treat all NaN results as if they were the same bit sequence; all test results here have this option enabled).
 * Unity's documentation does not make any statement on float determinism either way, so even with consistent results there is no guarantee future versions do not change this.
 * [ARMv7 apparently handles denormal numbers differently from ARMv8](https://stackoverflow.com/a/53993942), so should not be a surprise if it desyncs there. 
 
