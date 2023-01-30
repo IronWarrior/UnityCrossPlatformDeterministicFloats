@@ -36,6 +36,7 @@ Because the basic arithmetic operations *are* deterministic, a workaround for th
 | Platform           | Device                                       | Errors                |
 |--------------------|----------------------------------------------|-----------------------|
 | Windows Standalone | Intel(R) Core(TM) i7-10700K                  | Ground truth          |
+| Windows Standalone | AMD Ryzen(TM) 9 7950X                        | 0 errors              |
 | Android            | Google Pixel 4a                              | 57 in Trig functions  |
 | WebGL              | Chrome, Windows, Intel(R) Core(TM) i7-10700K | 252 in Trig functions |
 | WebGL              | Chrome, Android, Google Pixel 4a             | 252 in Trig functions |
