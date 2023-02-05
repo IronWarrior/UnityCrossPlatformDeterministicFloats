@@ -16,7 +16,7 @@ The author of this repo is not an expert in floating point arithmetic determinis
 
 ## Results Summary
 
-Between Windows Standalone, Android native, and WebGL (via a browser in Windows, Android, iOS and Mac), the only non-deterministic results reported were in trig functions contained in `System.Math`. There are a couple likely reasons for this.
+Between Windows/Mac Standalone, Android native, and WebGL (via a browser in Windows, Android, iOS and Mac), the only non-deterministic results reported were in trig functions contained in `System.Math`. There are a couple likely reasons for this.
 
 - `System.Math` works on `doubles`, while this test works with `floats` and does not check if casting between the two is deterministic.
 - More likely, this is due to [.NET backing System.Math trig methods (among others) with unmanaged code](https://referencesource.microsoft.com/#mscorlib/system/math.cs) that may contain platform-specific differences.
@@ -37,6 +37,7 @@ Because the basic arithmetic operations *are* deterministic, a workaround for th
 |--------------------|----------------------------------------------|-----------------------|
 | Windows Standalone | Intel(R) Core(TM) i7-10700K                  | Ground truth          |
 | Windows Standalone | AMD Ryzen(TM) 9 7950X                        | 0 errors              |
+| Mac Standalone     | Intel Core i7                                | 147 in Trig functions |
 | Android            | Google Pixel 4a                              | 57 in Trig functions  |
 | WebGL              | Chrome, Windows, Intel(R) Core(TM) i7-10700K | 252 in Trig functions |
 | WebGL              | Chrome, Android, Google Pixel 4a             | 252 in Trig functions |
