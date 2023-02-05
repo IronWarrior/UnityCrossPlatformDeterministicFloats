@@ -34,25 +34,17 @@ public class Menu : MonoBehaviour
 
     private void Awake()
     {
-        if (Application.platform == RuntimePlatform.WindowsPlayer ||
-            Application.platform == RuntimePlatform.WindowsEditor)
+        generateMenuButton.onClick.AddListener(() =>
         {
-            generateMenuButton.onClick.AddListener(() =>
-            {
-                menuUI.SetActive(false);
-                generateUI.SetActive(true);
-            });
+            menuUI.SetActive(false);
+            generateUI.SetActive(true);
+        });
 
-            generateButton.onClick.AddListener(() =>
-            {
-                GenerateInputsFile();
-                StartCoroutine(RunTest(true));
-            });
-        }
-        else
+        generateButton.onClick.AddListener(() =>
         {
-            generateMenuButton.gameObject.SetActive(false);
-        }
+            GenerateInputsFile();
+            StartCoroutine(RunTest(true));
+        });
 
         executeMenuButton.onClick.AddListener(() =>
         {
@@ -84,6 +76,17 @@ public class Menu : MonoBehaviour
         testTogglePrototype.gameObject.SetActive(false);
     }
 
+    private string GetStreamingAssetsPath(string filename)
+    {
+        string path = Path.Combine(Application.streamingAssetsPath, filename);
+
+#if UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
+                path = path.Insert(0, "file://");
+#endif
+
+        return path;
+    }
+
     private void GenerateInputsFile()
     {
         string path = Path.Combine(Application.streamingAssetsPath, inputsFilename);
@@ -98,7 +101,7 @@ public class Menu : MonoBehaviour
         generateUI.SetActive(false);
         executeUI.SetActive(false);
 
-        UnityWebRequest inputsReq = UnityWebRequest.Get(Path.Combine(Application.streamingAssetsPath, inputsFilename));
+        UnityWebRequest inputsReq = UnityWebRequest.Get(GetStreamingAssetsPath(inputsFilename));
         yield return inputsReq.SendWebRequest();
 
         var inputsReader = new StreamReader(new MemoryStream(inputsReq.downloadHandler.data));
@@ -118,7 +121,7 @@ public class Menu : MonoBehaviour
         }
         else
         {
-            UnityWebRequest resultsReq = UnityWebRequest.Get(Path.Combine(Application.streamingAssetsPath, resultsFilename));
+            UnityWebRequest resultsReq = UnityWebRequest.Get(GetStreamingAssetsPath(resultsFilename));
             yield return resultsReq.SendWebRequest();
 
             var resultsReader = new StreamReader(new MemoryStream(resultsReq.downloadHandler.data));
