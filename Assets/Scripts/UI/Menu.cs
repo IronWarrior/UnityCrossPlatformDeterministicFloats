@@ -104,6 +104,12 @@ public class Menu : MonoBehaviour
         UnityWebRequest inputsReq = UnityWebRequest.Get(GetStreamingAssetsPath(inputsFilename));
         yield return inputsReq.SendWebRequest();
 
+        if (inputsReq.downloadHandler.data == null)
+        {
+            output.text = $"Unable to retrieve {inputsFilename}.";
+            yield break;
+        }
+
         var inputsReader = new StreamReader(new MemoryStream(inputsReq.downloadHandler.data));
         FloatInputs inputs = new FloatInputs(inputsReader);
         inputsReader.Close();
@@ -123,6 +129,12 @@ public class Menu : MonoBehaviour
         {
             UnityWebRequest resultsReq = UnityWebRequest.Get(GetStreamingAssetsPath(resultsFilename));
             yield return resultsReq.SendWebRequest();
+
+            if (resultsReq.downloadHandler.data == null)
+            {
+                output.text = $"Unable to retrieve {resultsFilename}.";
+                yield break;
+            }
 
             var resultsReader = new StreamReader(new MemoryStream(resultsReq.downloadHandler.data));
 
