@@ -17,12 +17,15 @@ public class TestRunner
         new Acos(),
         new Atan(),
 
-        new BurstSin(),
-        new BurstCos(),
-        new BurstTan(),
-        new BurstAsin(),
-        new BurstAcos(),
-        new BurstAtan(),
+        new MathematicsSin(),
+        new MathematicsCos(),
+        new MathematicsTan(),
+        new MathematicsAsin(),
+        new MathematicsAcos(),
+        new MathematicsAtan(),
+        new MathematicsFloor(),
+        new MathematicsCeil(),
+        new MathematicsRound(),
     };
 
     private static readonly ITest[] doubleOperandTests = new ITest[]

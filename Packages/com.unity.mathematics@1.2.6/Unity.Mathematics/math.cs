@@ -1874,7 +1874,7 @@ namespace Unity.Mathematics
         /// <param name="x">Input value.</param>
         /// <returns>The hyperbolic tangent of the input.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float tanh(float x) { return (float)System.Math.Tanh(x); }
+        public static float tanh(float x) { return mathb.tanh(x); }
 
         /// <summary>Returns the componentwise hyperbolic tangent of a float2 vector.</summary>
         /// <param name="x">Input value.</param>
@@ -1975,7 +1975,7 @@ namespace Unity.Mathematics
         /// <param name="x">Denominator of the ratio y/x, usually the x component on the unit circle.</param>
         /// <returns>The arctangent of the ratio y/x, in radians.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float atan2(float y, float x) { return (float)System.Math.Atan2(y, x); }
+        public static float atan2(float y, float x) { return mathb.atan2(y, x); }
 
         /// <summary>Returns the componentwise 2-argument arctangent of a pair of floats2 vectors.</summary>
         /// <param name="y">Numerator of the ratio y/x, usually the y component on the unit circle.</param>
@@ -2082,7 +2082,7 @@ namespace Unity.Mathematics
         /// <param name="x">Input value.</param>
         /// <returns>The hyperbolic cosine of the input.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float cosh(float x) { return (float)System.Math.Cosh(x); }
+        public static float cosh(float x) { return mathb.cosh(x); }
 
         /// <summary>Returns the componentwise hyperbolic cosine of a float2 vector.</summary>
         /// <param name="x">Input value.</param>
@@ -2232,7 +2232,7 @@ namespace Unity.Mathematics
         /// <param name="x">Input value.</param>
         /// <returns>The hyperbolic sine of the input.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float sinh(float x) { return (float)System.Math.Sinh((float)x); }
+        public static float sinh(float x) { return mathb.sinh(x); }
 
         /// <summary>Returns the componentwise hyperbolic sine of a float2 vector.</summary>
         /// <param name="x">Input value.</param>
@@ -2682,7 +2682,7 @@ namespace Unity.Mathematics
         /// <param name="y">The exponent power.</param>
         /// <returns>The result of raising x to the power y.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float pow(float x, float y) { return (float)System.Math.Pow((float)x, (float)y); }
+        public static float pow(float x, float y) { return mathb.pow(x, y); }
 
         /// <summary>Returns the componentwise result of raising x to the power y.</summary>
         /// <param name="x">The exponent base.</param>
@@ -2739,7 +2739,7 @@ namespace Unity.Mathematics
         /// <param name="x">Input value.</param>
         /// <returns>The base-e exponential of the input.</returns>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static float exp(float x) { return (float)System.Math.Exp((float)x); }
+        public static float exp(float x) { return mathb.exp(x); }
 
         /// <summary>Returns the componentwise base-e exponential of x.</summary>
         /// <param name="x">Input value.</param>

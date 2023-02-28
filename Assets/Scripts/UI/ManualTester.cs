@@ -8,10 +8,10 @@ public class ManualTester : MonoBehaviour
     [SerializeField]
     InputField testNameInput, testBitsInputA, testBitsInputB, testOutput;
 
-    private int[] indices = new int[] { 0, 1 };
+    private readonly int[] indices = new int[] { 0, 1 };
     private uint[] results = new uint[2];
 
-    private List<FloatInputs.Input> inputs = new List<FloatInputs.Input>(2);
+    private readonly List<FloatInputs.Input> inputs = new List<FloatInputs.Input>(2);
 
     private void Awake()
     {
