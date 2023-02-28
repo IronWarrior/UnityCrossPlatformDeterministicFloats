@@ -70,7 +70,7 @@ public class Menu : MonoBehaviour
         foreach (var test in TestRunner.Tests)
         {
             Toggle toggle = Instantiate(testTogglePrototype, toggleParent);
-            toggle.GetComponentInChildren<Text>().text = test.Name;
+            toggle.GetComponentInChildren<Text>().text = test.Name();
         }
 
         testTogglePrototype.gameObject.SetActive(false);
@@ -146,7 +146,7 @@ public class Menu : MonoBehaviour
             for (int i = 0; i < toggles.Length; i++)
             {
                 if (toggles[i].isOn)
-                    selectedTests.Add(tests[i].Name);
+                    selectedTests.Add(tests[i].Name());
             }
 
             TestRunner runner = new TestRunner(inputs, resultsReader, selectedTests.ToArray(), treatAllNaNAlikeToggle.isOn);
@@ -156,7 +156,7 @@ public class Menu : MonoBehaviour
 
             foreach (var kvp in runner.ErrorCountByTest)
             {
-                output.text += $"<b>{kvp.Key.Name}</b>: {kvp.Value}\n";
+                output.text += $"<b>{kvp.Key.Name()}</b>: {kvp.Value}\n";
             }
 
             output.text += "\n" + log;

@@ -89,7 +89,7 @@ public class TestRunner
 
             if (writing)
             {
-                writer.WriteLine(test.Name);
+                writer.WriteLine(test.Name());
             }
             else
             {
@@ -113,7 +113,7 @@ public class TestRunner
 
             if (writing)
             {
-                writer.WriteLine(test.Name);
+                writer.WriteLine(test.Name());
             }
             else
             {
@@ -163,7 +163,7 @@ public class TestRunner
                     {
                         if (ErrorCount < errorMessageLimit)
                         {
-                            string message = $"{test.Name}\n" +
+                            string message = $"{test.Name()}\n" +
                                 $"result {FloatTools.BitsToVerboseString(result)}\n" +
                                 $"truth {FloatTools.BitsToVerboseString(truthBits)}\n";
 

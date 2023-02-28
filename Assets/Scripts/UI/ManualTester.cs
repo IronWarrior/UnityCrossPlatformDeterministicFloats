@@ -23,7 +23,7 @@ public class ManualTester : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(testNameInput.text))
         {
-            var test = TestRunner.Tests.Where(t => t.Name.ToUpper() == testNameInput.text.ToUpper()).FirstOrDefault();
+            var test = TestRunner.Tests.Where(t => t.Name().ToUpper() == testNameInput.text.ToUpper()).FirstOrDefault();
 
             if (test != null)
             {

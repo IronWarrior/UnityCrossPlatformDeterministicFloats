@@ -2,8 +2,6 @@ using System.Collections.Generic;
 
 public abstract class OperatorTest : ITest
 {
-    public abstract string Name { get; }
-
     public abstract uint Operate(float a, float b);
 
     public int Execute(IReadOnlyList<FloatInputs.Input> inputs, int[] indices, ref uint[] results)
@@ -19,8 +17,6 @@ public abstract class OperatorTest : ITest
 
 public class Add : OperatorTest
 {
-    public override string Name => "Add";
-
     public override uint Operate(float a, float b)
     {
         float r = a + b;
@@ -30,8 +26,6 @@ public class Add : OperatorTest
 
 public class Subtract : OperatorTest
 {
-    public override string Name => "Subtract";
-
     public override uint Operate(float a, float b)
     {
         float r = a - b;
@@ -41,8 +35,6 @@ public class Subtract : OperatorTest
 
 public class Multiply : OperatorTest
 {
-    public override string Name => "Multiply";
-
     public override uint Operate(float a, float b)
     {
         float r = a * b;
@@ -52,8 +44,6 @@ public class Multiply : OperatorTest
 
 public class Divide : OperatorTest
 {
-    public override string Name => "Divide";
-
     public override uint Operate(float a, float b)
     {
         float r = a / b;
@@ -63,8 +53,6 @@ public class Divide : OperatorTest
 
 public class MultiplyAdd : OperatorTest
 {
-    public override string Name => "MultiplyAdd";
-
     public override uint Operate(float a, float b)
     {
         float c = b * 2;
@@ -76,8 +64,6 @@ public class MultiplyAdd : OperatorTest
 
 public class Equals : OperatorTest
 {
-    public override string Name => "Equals";
-
     public override uint Operate(float a, float b)
     {
         return a == b ? 1u : 0;
@@ -86,8 +72,6 @@ public class Equals : OperatorTest
 
 public class NotEquals : OperatorTest
 {
-    public override string Name => "NotEquals";
-
     public override uint Operate(float a, float b)
     {
         return a != b ? 1u : 0;
@@ -96,8 +80,6 @@ public class NotEquals : OperatorTest
 
 public class GreaterThan : OperatorTest
 {
-    public override string Name => "GreaterThan";
-
     public override uint Operate(float a, float b)
     {
         return  a > b ? 1u : 0;
@@ -106,8 +88,6 @@ public class GreaterThan : OperatorTest
 
 public class LessThan : OperatorTest
 {
-    public override string Name => "LessThan";
-
     public override uint Operate(float a, float b)
     {
         return a < b ? 1u : 0;
@@ -116,8 +96,6 @@ public class LessThan : OperatorTest
 
 public class GreaterThanEquals : OperatorTest
 {
-    public override string Name => "GreaterThanEquals";
-
     public override uint Operate(float a, float b)
     {
         return a >= b ? 1u : 0;
@@ -126,8 +104,6 @@ public class GreaterThanEquals : OperatorTest
 
 public class LessThanEquals : OperatorTest
 {
-    public override string Name => "LessThanEquals";
-
     public override uint Operate(float a, float b)
     {
         return a <= b ? 1u : 0;
@@ -137,8 +113,6 @@ public class LessThanEquals : OperatorTest
 // Casting to and from integer.
 public class Cast : ITest
 {
-    public string Name => "Cast";
-
     public int Execute(IReadOnlyList<FloatInputs.Input> inputs, int[] indices, ref uint[] results)
     {
         float f = inputs[indices[0]].Float;
@@ -164,8 +138,6 @@ public class Cast : ITest
 // Not entirely sure my original logic behind this, probably just an insane smoke test???
 public class MultiOperator : ITest
 {
-    public string Name => "MultiOperator";
-
     public int Execute(IReadOnlyList<FloatInputs.Input> inputs, int[] indices, ref uint[] results)
     {
         int a = indices[0];
