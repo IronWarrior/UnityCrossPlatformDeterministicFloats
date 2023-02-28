@@ -1,0 +1,5 @@
+{
+	"name": "Unity.Mathematics",
+	"references": [ "Unity.Burst" ],
+	"allowUnsafeCode": true
+}

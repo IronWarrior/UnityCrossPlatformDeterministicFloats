@@ -9,12 +9,20 @@ public class TestRunner
     {
         new Cast(),
         new MultiOperator(),
+
         new Sin(),
         new Cos(),
         new Tan(),
         new Asin(),
         new Acos(),
         new Atan(),
+
+        new BurstSin(),
+        new BurstCos(),
+        new BurstTan(),
+        new BurstAsin(),
+        new BurstAcos(),
+        new BurstAtan(),
     };
 
     private static readonly ITest[] doubleOperandTests = new ITest[]
